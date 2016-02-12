@@ -1,0 +1,37 @@
+.text-input:focus {
+  position: relative;
+  overflow: visible;
+  word-wrap: break-word;
+  outline: 0;
+}
+
+span.tagged {
+  position: relative;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.synonym-list {
+  max-width: 250px;
+  padding: 2px;
+  position: absolute;
+  bottom: .5em;
+  right: 0;
+  display: none;
+  color: #000;
+  border: 1px solid black;
+  background: white;
+  border-radius: 4px;
+  cursor: default;
+  resize: none;
+}
+.synonym-list li {
+  list-style: none;
+  display: block;
+  margin: 2px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.synonym-list li:hover {
+  color: blue;
+}
