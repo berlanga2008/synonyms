@@ -36,7 +36,7 @@ $.Synonyms = function (el, options) {
                 this.resetCaret(this.$el.get(0));
                 this.$el.find('br').remove();
             } else {
-                this.removeSpan();
+                this.backspace();
             }
         // NULL || SPACE
         } else if (code === 0 || code === 32) {
@@ -155,14 +155,14 @@ $.Synonyms.prototype.escapeSpan = function () {
     }
 };
 
-//For Firefox, tagged word backspace functionality
-//TODO:  Make this more consistent across browsers in future,
-$.Synonyms.prototype.removeSpan = function () {
+//Responsible for executing backspace logic across browsers
+$.Synonyms.prototype.backspace = function () {
     var sel = window.getSelection(),
         range = document.createRange(),
         newText,
         parentSpan;
 
+    //Firefox Logic
     if (sel.anchorNode.parentNode.nodeName === 'LI') {
         parentSpan = sel.anchorNode.parentNode.parentNode.parentNode;
 
@@ -182,6 +182,18 @@ $.Synonyms.prototype.removeSpan = function () {
         range.collapse(true);
         sel.removeAllRanges();
         sel.addRange(range);
+    } else if (sel.anchorNode.parentNode.nodeName === 'SPAN') {
+        //Chrome and Safari Logic
+        newText = $(sel.anchorNode.parentNode)
+            .clone()
+            .children()
+            .remove()
+            .end()
+            .text();
+
+        var prevNode = sel.anchorNode.parentNode.previousSibling;
+        sel.anchorNode.remove();
+        prevNode.nodeValue += newText.slice(0, newText.length - 1);
     }
 };
 
