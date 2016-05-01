@@ -1,6 +1,8 @@
 # jquery-synonyms
 A jQuery plugin for tagging and replacing words.
 
+![synonyms](https://cloud.githubusercontent.com/assets/6382796/14942451/7e7c5dac-0f8b-11e6-88b3-351a75dea259.gif)
+
 ## Usage
 Simply call `.synonyms(options = {})` on any div that has `contenteditable=true`.
 In the current version, the thesaurus that the plugin uses must be frontloaded with replacement words.  A future version will have the ability to query an API.
