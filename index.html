@@ -1,0 +1,18 @@
+<html>
+  <header>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="./jquery.synonyms.js"></script>
+    <link rel="stylesheet" href="synonyms.css">
+    <link rel="stylesheet" href="style.css">
+  </header>
+  <body>
+    <h3>Synonyms Demo</h3>
+    <h4>Current Thesaurus: ['happy', 'cheerful', 'delighted'], ['eager', 'enthusiastic', 'thrilled']</h4>
+    <div contenteditable="true">
+  </body>
+  <script>
+    $('div').synonyms(options = {
+      'thesaurusRaw': [['happy', 'cheerful', 'delighted'], ['eager', 'enthusiastic', 'thrilled']],
+    });
+  </script>
+</html>
