@@ -1,6 +1,8 @@
 # jquery-synonyms
 A jQuery plugin for tagging and replacing words.
 
+[Check out the demo here.](http://andrewjgremmo.github.io/synonyms)
+
 ![synonyms](https://cloud.githubusercontent.com/assets/6382796/14942451/7e7c5dac-0f8b-11e6-88b3-351a75dea259.gif)
 
 ## Usage
